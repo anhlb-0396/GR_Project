@@ -67,7 +67,9 @@ class UserController {
     if (!user) return next(new AppError("User not found", 404));
     return res.status(200).json({
       status: "success",
-      data: { user },
+      data: {
+        bookmarks: user.Bookmarks,
+      },
     });
   }
 

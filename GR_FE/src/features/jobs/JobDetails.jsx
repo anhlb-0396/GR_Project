@@ -67,7 +67,7 @@ function JobDetails() {
   const navigate = useNavigate();
   const { job, isLoading, isError } = useJob(id);
   const [isOpenCommentDialog, setIsOpenCommentDialog] = useState(false);
-  const { currentUser, token, isAuthenticated } = useAuth();
+  const { currentUser, token, isAuthenticated, isUser } = useAuth();
   const { createComment, isCreating } = useCreateComment();
   const [ratings, setRatings] = useState(initialRatings);
   const [selectedTab, setSelectedTab] = useState(0);
@@ -284,7 +284,7 @@ function JobDetails() {
               </Stack>
 
               <Stack>
-                {isAuthenticated && (
+                {isAuthenticated && isUser && (
                   <Button
                     color="primary"
                     variant="outlined"

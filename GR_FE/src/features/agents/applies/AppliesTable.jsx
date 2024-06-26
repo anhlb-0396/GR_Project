@@ -56,7 +56,7 @@ export default function AppliesTable() {
   const { currentUser, token } = useAuth();
   const { socket, setCurrentChatUserId, chattingUsers, setChattingUsers } =
     useSocket();
-  const { applies, isLoading, isError } = useApplies(currentUser.company_id);
+  const { applies, isLoading, isError } = useApplies(currentUser?.company_id);
   const { isUpdating, updateCurrentApply } = useUpdateApply(
     currentUser.company_id
   );
@@ -86,7 +86,7 @@ export default function AppliesTable() {
     );
   }
 
-  if (isError) {
+  if (isError || !applies) {
     return (
       <Box sx={{ width: "100%", margin: "0 auto" }}>
         <Alert severity="error">
