@@ -2,7 +2,7 @@ version: "3"
 
 services:
   mysql:
-    image: arm64v8/mysql
+    image: mysql
     ports:
       - "3308:3306" # External port 3308 mapped to internal port 3306
     environment:
