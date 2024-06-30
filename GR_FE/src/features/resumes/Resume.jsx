@@ -46,11 +46,11 @@ export default function Resume({ profile }) {
               alignItems: "center",
             }}
           >
-            <Avatar
+            {/* <Avatar
               alt={profile.name}
               src={profile.avatar}
               sx={{ width: 100, height: 100 }}
-            />
+            /> */}
             <Typography variant="h5" component="div" sx={{ mt: 2 }}>
               {profile.name}
             </Typography>

@@ -58,7 +58,7 @@ function Personal() {
             <ControlledTextField
               id="address"
               name="address"
-              label="Địa chỉ"
+              label="Vị trí công việc"
               register={register}
               errors={errors}
               startAdornment={<LocationOnIcon />}
