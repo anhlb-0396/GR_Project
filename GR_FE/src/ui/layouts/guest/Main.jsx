@@ -1,6 +1,11 @@
 import { Box } from "@mui/material";
 
-const styles = { width: "98%", margin: "0 auto", pt: "2rem" };
+const styles = {
+  width: "98%",
+  margin: "0 auto",
+  pt: "2rem",
+  minHeight: "60vh",
+};
 
 function Main({ children }) {
   return <Box sx={styles}>{children}</Box>;

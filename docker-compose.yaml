@@ -48,7 +48,9 @@ services:
       - ./GR_FE:/app
       - /app/node_modules
     ports:
-      - "80:80"
+      - "5173:5173"
+      # ports:
+      # - "80:80"
     stdin_open: true
     tty: true
     depends_on:

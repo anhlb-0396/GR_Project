@@ -202,11 +202,10 @@ export default function UserLayouts() {
           flexGrow: 1,
           height: "100vh",
           overflow: "auto",
-          // bgcolor: "red",
         }}
       >
         <Toolbar />
-        <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+        <Container maxWidth="lg" sx={{ mt: 4, mb: 4, minHeight: "55vh" }}>
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Outlet />
