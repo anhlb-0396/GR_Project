@@ -99,6 +99,11 @@ const UpdateJobForm = ({ onSubmit, isUpdating, currentUser, token, job }) => {
   }, [job, reset]);
 
   const handleFormSubmit = async (data) => {
+    if (data.description === "<p><br></p>") {
+      data.description = "";
+      return;
+    }
+
     const transformedIndustriesList = industriesList.map((item) =>
       typeof item === "string" ? item : item.industry
     );
@@ -167,7 +172,13 @@ const UpdateJobForm = ({ onSubmit, isUpdating, currentUser, token, job }) => {
             name="description"
             control={control}
             defaultValue=""
-            rules={{ required: "Description is required" }}
+            rules={{
+              required: "Description is required",
+              validate: (value) => {
+                const trimmedValue = value && value.trim();
+                return trimmedValue ? true : "Description cannot be empty";
+              },
+            }}
             render={({ field }) => (
               <ReactQuill
                 {...field}
@@ -598,7 +609,7 @@ const UpdateJobForm = ({ onSubmit, isUpdating, currentUser, token, job }) => {
             name="tags"
             control={control}
             defaultValue={job ? job.Tags.map((tag) => tag.tag) : []}
-            rules={{ required: "Tags are required" }}
+            // rules={{ required: "Tags are required" }}
             render={({ field: { value, onChange, ...other } }) => (
               <Autocomplete
                 {...other}

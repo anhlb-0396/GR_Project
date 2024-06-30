@@ -12,7 +12,13 @@ function CompanyPage() {
 
   return (
     <Box
-      sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "80%",
+        margin: "0 auto",
+      }}
     >
       <Box sx={{ width: "50%", mb: 2 }}>
         <TextField

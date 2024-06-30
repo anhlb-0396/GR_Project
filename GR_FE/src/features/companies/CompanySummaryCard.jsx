@@ -163,7 +163,7 @@ function CompanySummaryCard({ company, xs, md, ratingDisplay }) {
             <Button
               endIcon={<SubdirectoryArrowRightIcon />}
               component={Link}
-              to={`/user/companies/${company.id}`}
+              to={`/companies/${company.id}`}
               variant="contained"
             >
               Chi tiết

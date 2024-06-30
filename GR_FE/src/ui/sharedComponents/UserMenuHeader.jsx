@@ -33,7 +33,7 @@ function UserMenuHeader({
           : "/user/home"
       }`,
     },
-    { label: "Account", to: "/" },
+    { label: "Trang chủ", to: "/" },
   ];
 
   const handleOpenUserMenu = (event) => {

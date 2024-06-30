@@ -66,6 +66,14 @@ function ResponsiveAppBar() {
           >
             JOBFIND
           </Typography>
+          <Button
+            component={Link}
+            to="/companies"
+            color="inherit"
+            sx={{ my: 2, color: "white" }}
+          >
+            Doanh nghiệp
+          </Button>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -131,7 +139,6 @@ function ResponsiveAppBar() {
           >
             JOBFIND
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -145,7 +152,6 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
-
           {isAuthenticated && (
             <UserMenuHeader
               toggleNotificationMenu={toggleNotificationMenu}
@@ -154,7 +160,6 @@ function ResponsiveAppBar() {
               currentUser={currentUser}
             />
           )}
-
           {!isAuthenticated && (
             <Box sx={{ flexGrow: 0 }}>
               <Button

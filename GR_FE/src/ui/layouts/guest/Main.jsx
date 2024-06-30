@@ -4,7 +4,7 @@ const styles = {
   width: "98%",
   margin: "0 auto",
   pt: "2rem",
-  minHeight: "60vh",
+  minHeight: "65vh",
 };
 
 function Main({ children }) {

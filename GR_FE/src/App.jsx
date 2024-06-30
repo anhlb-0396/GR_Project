@@ -102,6 +102,8 @@ function App() {
                       path="/resumes/:id"
                       element={<ResumeDisplayPage />}
                     />
+                    <Route path="/companies" element={<CompanyPage />} />
+                    <Route path="/companies/:id" element={<CompanyDetails />} />
                   </Route>
 
                   <Route
@@ -116,11 +118,11 @@ function App() {
                       element={<Homepage isGuest={false} />}
                     />
                     <Route path="/user/profiles" element={<Profile />} />
-                    <Route path="/user/companies" element={<CompanyPage />} />
+                    {/* <Route path="/user/companies" element={<CompanyPage />} />
                     <Route
                       path="/user/companies/:id"
                       element={<CompanyDetails />}
-                    />
+                    /> */}
                     <Route
                       path="/user/jobs/bookmarks"
                       element={<BookmarkJobList />}

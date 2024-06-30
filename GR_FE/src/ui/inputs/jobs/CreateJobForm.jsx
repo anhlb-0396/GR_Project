@@ -97,13 +97,22 @@ const CreateJobForm = ({ onSubmit, isCreating, currentUser, token }) => {
             name="description"
             control={control}
             defaultValue=""
-            rules={{ required: "Description is required" }}
+            rules={{
+              required: "Description is required",
+              validate: (value) =>
+                value && value.trim() !== "" && value.trim() !== "<p><br></p>"
+                  ? true
+                  : "Description is required",
+            }}
             render={({ field }) => (
               <ReactQuill
                 {...field}
                 modules={quillModules}
                 formats={quillFormats}
                 theme="snow"
+                helperText={
+                  errors.description ? errors.description.message : ""
+                }
               />
             )}
           />
